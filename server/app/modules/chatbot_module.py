@@ -34,6 +34,8 @@ class ChatService:
             db.add(MessageModel(session_id=session_id, role="model", content=bot_text))
             db.commit()
 
+            print("Sucess with ChatBot module")
+
             return bot_text
 
         except Exception as e:

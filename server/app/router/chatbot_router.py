@@ -13,6 +13,8 @@ class ChatRouter:
         await websocket.accept()
         
         db = next(db_manager.get_session())
+
+        print("chat route hitted and db establised")
         try:
             while True:
                 data = await websocket.receive_text()
