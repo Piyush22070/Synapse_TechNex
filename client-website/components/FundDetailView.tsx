@@ -277,7 +277,6 @@ const FundDetailView: React.FC<FundDetailViewProps> = ({ fund, onClose }) => {
                 Sub Category
               </label>
               <input
-              <input
                 type="text"
                 value={subCategoryInput}
                 onChange={(e) => setSubCategoryInput(e.target.value)}

@@ -24,14 +24,14 @@ export default function AnalysisScreen() {
         <View style={styles.waterfallHeader}>
           <Text style={styles.waterfallLabel}>INVESTMENT WATERFALL</Text>
           <View style={styles.netValueContainer}>
-            <Text style={styles.netValue}>$14,500</Text>
+            <Text style={styles.netValue}>.14,500</Text>
             <Text style={styles.netLabel}>Net</Text>
           </View>
           <View style={styles.returnsRow}>
             <View style={styles.returnsBadge}>
               <Text style={styles.returnsText}>+45% Returns</Text>
             </View>
-            <Text style={styles.categoryAvg}>vs. $14,000 Category Avg</Text>
+            <Text style={styles.categoryAvg}>vs. <div className=""></div>14,000 Category Avg</Text>
           </View>
         </View>
 
@@ -60,7 +60,7 @@ export default function AnalysisScreen() {
           <View style={styles.barGroup}>
             <View style={[styles.bar, { height: 180, backgroundColor: 'black' }]} />
             <View style={styles.netLabelFloating}>
-                <Text style={styles.netLabelFloatingText}>$14.5k</Text>
+                <Text style={styles.netLabelFloatingText}>14.5k</Text>
             </View>
             <Text style={styles.barLabel}>NET</Text>
           </View>
@@ -86,7 +86,7 @@ export default function AnalysisScreen() {
                 <Ionicons name="receipt-outline" size={24} color="#E5E7EB" />
             </View>
             <Text style={styles.statCardLabel}>TOTAL FEES</Text>
-            <Text style={styles.statCardValue}>$500</Text>
+            <Text style={styles.statCardValue}>500</Text>
           </View>
           
           <View style={styles.statCard}>

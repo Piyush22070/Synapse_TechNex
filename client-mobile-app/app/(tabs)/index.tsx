@@ -1,40 +1,16 @@
-import { FontAwesome5, Ionicons } from '@expo/vector-icons';
+import { FeaturedFunds } from '@/components/featured-funds';
+import { useFetchFunds } from '@/hooks/use-fetch-funds';
+import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import React from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
-const funds = [
-  {
-    id: 1,
-    name: 'Blue Chip Growth',
-    category: 'Equity • Very High Risk',
-    price: '$48.20',
-    change: '↑ 24.5%',
-    icon: 'rocket',
-    color: '#F3F4F6',
-  },
-  {
-    id: 2,
-    name: 'Global Innovation',
-    category: 'Intl Equity • High Risk',
-    price: '$12.45',
-    change: '↑ 18.2%',
-    icon: 'globe',
-    color: '#F3F4F6',
-  },
-  {
-    id: 3,
-    name: 'Gold ETF Fund',
-    category: 'Commodity • Moderate',
-    price: '$64.10',
-    change: '↑ 8.4%',
-    icon: 'piggy-bank',
-    color: '#F3F4F6',
-  },
-];
 
 export default function HomeScreen() {
   const router = useRouter();
+
+  // You can change the query to any keyword, e.g., 'Axis', 'SBI', etc.
+  const [query] = useState('Axis');
+  const { data: funds, loading, error } = useFetchFunds(query);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -47,7 +23,7 @@ export default function HomeScreen() {
             </View>
             <View>
               <Text style={styles.greeting}>Good Morning</Text>
-              <Text style={styles.userName}>Alex Investor</Text>
+              <Text style={styles.userName}>Welcome Synapse</Text>
             </View>
           </View>
           <TouchableOpacity style={styles.notificationButton}>
@@ -69,11 +45,11 @@ export default function HomeScreen() {
           </View>
           
           <View style={styles.valueContainer}>
-            <Text style={styles.currency}>$</Text>
+            <Text style={styles.currency}>₹</Text>
             <Text style={styles.value}>142,850</Text>
             <Text style={styles.cents}>.45</Text>
           </View>
-          <Text style={styles.monthlyChange}>+$7,240.00 this month</Text>
+          <Text style={styles.monthlyChange}>+₹7,240.00 this month</Text>
 
           {/* Graph Placeholder */}
           <View style={styles.graphContainer}>
@@ -113,33 +89,11 @@ export default function HomeScreen() {
           </TouchableOpacity>
         </View>
 
-        {/* Top Performing Funds */}
+        {/* Top Performing Funds (Featured) */}
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Top Performing Funds</Text>
-          <TouchableOpacity>
-            <Text style={styles.viewAllText}>VIEW ALL</Text>
-          </TouchableOpacity>
         </View>
-
-        <View style={styles.fundsList}>
-          {funds.map((fund) => (
-            <TouchableOpacity key={fund.id} style={styles.fundCard} onPress={() => router.push('/fund/1')}>
-              <View style={styles.fundIconContainer}>
-                <FontAwesome5 name={fund.icon} size={20} color="black" />
-              </View>
-              <View style={styles.fundInfo}>
-                <Text style={styles.fundName}>{fund.name}</Text>
-                <Text style={styles.fundCategory}>{fund.category}</Text>
-              </View>
-              <View style={styles.fundPrice}>
-                <Text style={styles.priceText}>{fund.price}</Text>
-                <View style={styles.changeBadge}>
-                    <Text style={styles.changeText}>{fund.change}</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          ))}
-        </View>
+        <FeaturedFunds />
         
         {/* Spacer for Bottom Tab */}
         <View style={{ height: 100 }} />

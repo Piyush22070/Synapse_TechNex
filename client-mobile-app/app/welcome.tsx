@@ -13,7 +13,7 @@ export default function WelcomeScreen() {
         <View style={styles.header}>
           <View style={styles.logoContainer}>
             <FontAwesome5 name="cube" size={24} color="black" />
-            <Text style={styles.logoText}>VELVET CAPITAL</Text>
+            <Text style={styles.logoText}>Alpha</Text>
           </View>
           <TouchableOpacity style={styles.menuButton}>
             <Ionicons name="menu" size={24} color="black" />

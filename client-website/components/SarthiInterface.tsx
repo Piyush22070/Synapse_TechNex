@@ -19,7 +19,7 @@ const SarthiInterface: React.FC = () => {
   // Use a unique session ID (could be from auth or params)
   const sessionId = "arjun_vault_01"; 
   const API_BASE_URL = "https://synapse-technex.onrender.com";
-  const WS_BASE_URL = "ws://synapse-technex.onrender.com";
+  const WS_BASE_URL = "wss://synapse-technex.onrender.com";
 
   // 1. Fetch Message History via Fetch API
   useEffect(() => {
