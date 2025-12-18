@@ -1,57 +1,57 @@
 export const MUTUAL_FUND_CATEGORIES = [
   {
-    id: 'small-cap',
-    title: "High Growth (Small Cap)",
+    id: 'equity-core',
+    title: "Equity Leaders (High Growth)",
     funds: [
       { code: "120828", name: "Quant Small Cap Fund" },
+      { code: "109830", name: "Quant Flexi Cap Fund" },
       { code: "119063", name: "Nippon India Small Cap" },
       { code: "125497", name: "SBI Small Cap Fund" },
-      { code: "119242", name: "HDFC Small Cap Fund" },
-      { code: "120175", name: "Axis Small Cap Fund" }
+      { code: "120594", name: "ICICI Prudential Technology Fund" } 
     ]
   },
   {
-    id: 'mid-cap',
-    title: "Mid Cap Gems",
+    id: 'hybrid',
+    title: "Hybrid & Balanced (Stability)",
     funds: [
-      { code: "119775", name: "Motilal Oswal Midcap Fund" },
-      { code: "118989", name: "HDFC Mid-Cap Opportunities" },
-      { code: "120724", name: "Edelweiss Mid Cap Fund" },
-      { code: "126785", name: "SBI Magnum Midcap" },
-      { code: "120742", name: "Kotak Emerging Equity" }
+      { code: "119053", name: "Tata Aggressive Hybrid Fund" },
+      { code: "120251", name: "ICICI Prudential Equity & Debt" },
+      { code: "119609", name: "SBI Equity Hybrid Fund" },
+      { code: "119216", name: "HDFC Hybrid Equity Fund" },
+      { code: "120843", name: "Quant Multi Asset Fund" }
     ]
   },
   {
-    id: 'flexi-cap',
-    title: "Balanced (Flexi Cap)",
+    id: 'sectoral',
+    title: "Sectoral & Thematic (Aggressive)",
     funds: [
-      { code: "122639", name: "Parag Parikh Flexi Cap" },
-      { code: "120843", name: "Quant Flexi Cap Fund" },
-      { code: "118955", name: "HDFC Flexi Cap Fund" },
-      { code: "120722", name: "JM Flexicap Fund" },
-      { code: "118834", name: "Franklin India Flexi Cap" }
+      { code: "135800", name: "Tata Digital India Fund" },
+      { code: "120594", name: "ICICI Prudential Technology" },
+      { code: "119783", name: "SBI Healthcare Opportunities" },
+      { code: "119243", name: "Tata Infrastructure Fund" },
+      { code: "120716", name: "UTI Nifty 50 Index Fund" }
     ]
   },
   {
-    id: 'large-cap',
-    title: "Bluechip Leaders (Large Cap)",
+    id: 'debt',
+    title: "Debt & Fixed Income",
     funds: [
-      { code: "118778", name: "Nippon India Large Cap" },
-      { code: "120586", name: "ICICI Prudential Bluechip" },
-      { code: "119062", name: "HDFC Top 100 Fund" },
-      { code: "119598", name: "SBI Bluechip Fund" },
-      { code: "118967", name: "Canara Robeco Bluechip" }
+      { code: "119824", name: "SBI Magnum Medium Duration" },
+      { code: "134387", name: "Aditya Birla SL Credit Risk" },
+      { code: "120692", name: "ICICI Pru Corporate Bond" },
+      { code: "119798", name: "SBI Credit Risk Fund" },
+      { code: "119533", name: "Aditya Birla SL Corporate Bond" }
     ]
   },
   {
-    id: 'elss',
-    title: "Tax Saver (ELSS)",
+    id: 'solution',
+    title: "Solution Oriented (Retirement/FoF)",
     funds: [
-      { code: "120847", name: "Quant ELSS Tax Saver" },
-      { code: "119723", name: "SBI Long Term Equity" },
-      { code: "119060", name: "HDFC ELSS Tax Saver" },
-      { code: "147699", name: "Parag Parikh ELSS" },
-      { code: "118563", name: "DSP ELSS Tax Saver" }
+      { code: "148683", name: "SBI Retirement Benefit (Aggressive)" },
+      { code: "119255", name: "Tata Retirement Savings (Moderate)" },
+      { code: "135783", name: "HDFC Retirement Savings (Equity)" },
+      { code: "146575", name: "Aditya Birla SL Retirement (30s)" },
+      { code: "143903", name: "ICICI Prudential BHARAT 22 FOF" }
     ]
   }
 ];

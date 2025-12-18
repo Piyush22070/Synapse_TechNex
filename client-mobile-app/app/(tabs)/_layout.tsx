@@ -89,7 +89,26 @@ export default function TabLayout() {
         listeners={({ navigation }) => ({
             tabPress: (e) => {
                 e.preventDefault();
-                router.push('/modal');
+                router.push({
+                  pathname: '/fund/compare-benchmark',
+                  params: {
+                    min_sip: 5000,
+                    min_lumpsum: 10000,
+                    expense_ratio: 1.5,
+                    fund_size_cr: 2000,
+                    fund_age_yr: 5,
+                    sortino: 0.5,
+                    alpha: 2.0,
+                    sd: 10.0,
+                    beta: 1.0,
+                    sharpe: 0.8,
+                    risk_level: 3,
+                    amc_name: 'HDFC Mutual Fund',
+                    rating: 4.5,
+                    category: 'Equity',
+                    sub_category: 'FoFs Domestic',
+                  },
+                });
             },
         })}
       />

@@ -1,4 +1,5 @@
 import { MUTUAL_FUND_CATEGORIES } from '@/constants/funds';
+import { useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { FlatList, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
@@ -20,6 +21,7 @@ export const FeaturedFunds: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
   const [fundsData, setFundsData] = useState<{ [catId: string]: FundCardData[] }>({});
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const categories = MUTUAL_FUND_CATEGORIES;
   const currentCategory = categories[selectedCategory];
@@ -89,13 +91,19 @@ export const FeaturedFunds: React.FC = () => {
   );
 
   const renderFund = ({ item }: { item: FundCardData }) => (
-    <View style={styles.fundCard}>
+    <TouchableOpacity
+      style={styles.fundCard}
+      onPress={() => router.push({
+        pathname: '/fund/[id]',
+        params: { id: item.code, name: item.name }
+      })}
+    >
       <Text style={styles.fundName}>{item.name}</Text>
       <Text style={styles.fundNav}>NAV: {item.nav !== null ? item.nav.toFixed(2) : '--'}</Text>
-      <Text style={[styles.fundReturn, { color: item.return1y && item.return1y > 0 ? '#16a34a' : '#dc2626' }]}>
+      <Text style={styles.fundReturn}>
         {item.return1y !== null ? `${item.return1y > 0 ? '+' : ''}${item.return1y.toFixed(2)}% (1Y)` : '--'}
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 
   return (
@@ -149,6 +157,7 @@ const styles = StyleSheet.create({
   },
   tabPillActive: {
     backgroundColor: '#000',
+    borderColor: '#fff',
   },
   tabText: {
     color: '#000',
@@ -167,11 +176,12 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     borderWidth: 1,
     borderColor: '#000',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 4,
-    elevation: 2,
+    // Remove shadow for strict black and white
+    shadowColor: 'transparent',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0,
+    shadowRadius: 0,
+    elevation: 0,
   },
   fundName: {
     fontWeight: 'bold',
@@ -200,7 +210,7 @@ const styles = StyleSheet.create({
   skeletonBar: {
     height: 16,
     backgroundColor: '#000',
-    opacity: 0.08,
+    opacity: 0.12,
     borderRadius: 8,
     width: 140,
   },
