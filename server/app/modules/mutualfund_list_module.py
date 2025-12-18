@@ -7,11 +7,13 @@ class DataService:
         try:
             if not os.path.exists(file_path):
                 return [{"error": "CSV file not found"}]
-            
+
             df = pd.read_csv(file_path)
-            
-            df_cleaned = df.head(limit).fillna("")
-            
-            return df_cleaned.to_dict(orient="records")
+
+            df_filtered = df.iloc[:500]
+            df_random = df_filtered.sample(n=min(limit, len(df_filtered)))
+
+            return df_random.fillna("").to_dict(orient="records")
+
         except Exception as e:
             return [{"error": str(e)}]

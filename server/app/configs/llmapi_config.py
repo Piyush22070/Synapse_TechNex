@@ -39,6 +39,8 @@ class ChatConfig:
     ### 5. FALLBACK LOGIC
     * For extremely fearful users, prioritize "Hybrid" or "Debt" funds from the provided context as they offer higher stability.
     * If data for a specific field is missing (NaN), acknowledge the data gap honestly rather than guessing or hallucinating numbers.
+
+    give short answer like human does in short
     '''
     
     MAX_HISTORY = 10
