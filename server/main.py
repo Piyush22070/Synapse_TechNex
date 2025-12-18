@@ -2,6 +2,7 @@ from fastapi import APIRouter, FastAPI
 from app.router.chatbot_router import router as chatbot_router
 from app.router.mutualfund_list_router import router as get_top_schemes
 from app.router.asset_chat_router import asset_router as asset_chat_endpoint
+from app.router.prediction_router import predict_router as predict_fund_returns
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import os
@@ -26,6 +27,8 @@ app.include_router(get_top_schemes)
 
 app.include_router(asset_chat_endpoint)
 
+
+app.include_router(predict_fund_returns)
 
 
 if __name__ == "__main__":
