@@ -6,7 +6,7 @@ load_dotenv()
 
 class ChatConfig:
     API_KEY = os.getenv("GEMINI_API_KEY")
-    MODEL_NAME = 'gemini-2.5-flash' 
+    MODEL_NAME = 'gemini-flash-latest' 
 
     """
     This is System Prompt for GEMNI chatbot RAG

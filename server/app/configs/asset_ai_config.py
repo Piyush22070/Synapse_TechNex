@@ -7,7 +7,7 @@ load_dotenv()
 class AssetChatConfig:
     API_KEY = os.getenv("GEMINI_API_KEY")
     print(API_KEY)
-    MODEL_NAME = 'gemini-2.5-flash' 
+    MODEL_NAME = 'gemini-flash-latest' 
     MAX_HISTORY = 10 
     
     SYSTEM_PROMPT = """
