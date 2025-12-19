@@ -1,56 +1,80 @@
-# Sampatti AI 📈🤖
+# Sampatti AI
 
+<img width="1440" height="900" alt="Sampatti AI Banner" src="https://github.com/user-attachments/assets/0950ec54-65f1-4804-bfe1-03e1fa6fe5a9" />
 
-<img width="1440" height="900" alt="Screenshot 2025-12-19 at 9 10 16 AM" src="https://github.com/user-attachments/assets/6f329e54-92e0-48ee-8682-a459398a9cfd" />
+**Sampatti AI** is a comprehensive financial ecosystem designed to revolutionize mutual fund investing. It combines machine learning-based return predictions with a voice-enabled Generative AI advisor to help users make data-backed financial decisions.
 
-**Sampatti AI** is a native macOS application designed to revolutionize mutual fund investing. It combines machine learning-based return predictions with a voice-enabled Generative AI advisor to help users make data-backed financial decisions.
-
-Built entirely with **SwiftUI** for macOS, it features a sleek, responsive dashboard and requires **no external third-party libraries**.
+While the flagship experience is built natively for **macOS** using SwiftUI, Sampatti AI is a cross-platform solution. The predictive engine and AI backend serve a **Web App** and a **Mobile App**, ensuring users can access their financial insights from any device.
 
 ---
 
-## 🌟 Key Features
+## Model Performance & Accuracy
 
-### 🧠 AI-Powered Advisor (Gemini Integration)
+Sampatti AI utilizes a high-precision Machine Learning model hosted on Google Cloud Run. The model has been rigorously tested and demonstrates high accuracy, particularly for long-term return forecasts (3-year and 5-year horizons), making it a reliable tool for long-term investment planning.
+
+**Performance Metrics:**
+
+| Prediction Horizon | RMSE | R2 Score | Accuracy Level |
+| :--- | :--- | :--- | :--- |
+| **1 Year Return** | 4.38 | 0.369 | Moderate |
+| **3 Year Return** | 3.98 | **0.878** | **High** |
+| **5 Year Return** | 1.66 | **0.741** | **High** |
+
+*As shown in the data, the model achieves an impressive **R2 score of 0.878 for 3-year predictions**, indicating a strong correlation between our predictions and actual market performance.*
+
+---
+
+## Key Features
+
+### AI-Powered Advisor (Gemini Integration)
 * **Conversational Finance:** Chat with "Alpha," a specialized advisor persona powered by Google's **Gemini 1.5 Flash**.
 * **Voice Enabled:** Native Text-to-Speech (AVFoundation) reads advice aloud for a hands-free experience.
 * **Context Aware:** The AI remembers conversation history to provide tailored advice on risks, SIPs, and asset allocation.
 
-### 🔮 ML Return Predictions
-* **Predictive Engine:** Connects to a custom Python/Flask backend to forecast **1-year, 3-year, and 5-year returns**.
+### ML Return Predictions
+* **Predictive Engine:** Connects to a custom Python/Flask backend to forecast returns.
 * **Advanced Metrics:** Input specific financial ratios (Alpha, Beta, Sharpe, Sortino) to see how they impact potential future performance.
 
-### 📊 Interactive Dashboard & Analytics
+### Interactive Dashboard & Analytics
 * **Live NAV Charts:** Visualise historical Net Asset Value (NAV) trends using native Swift Charts.
 * **Benchmark Tool:** Compare potential funds against benchmarks using Simple or Advanced parameter modes.
 * **Comprehensive Database:** Search and analyze funds across 40+ Asset Management Companies (AMCs).
 
 ---
 
-## 📸 Screenshots
+## Cross-Platform Ecosystem
 
-| Dashboard | AI Chat Advisor |
-|:---:|:---:|
-| ![Dashboard View]() | ![Chat Interface]() |
+Sampatti AI is not just a desktop application. We have deployed a unified architecture where a single, powerful backend serves multiple client interfaces:
 
-| Prediction Engine | NAV Analysis |
-|:---:|:---:|
-| ![Prediction View]() | ![NAV Chart]() |
+1.  **macOS Native App:** The premium desktop experience with native charts and voice integration.
+2.  **Web Application:** A responsive web interface allowing users to access predictions and chat with Alpha from any browser.
+3.  **Mobile Application:** A companion mobile app for on-the-go portfolio tracking and quick advisor consultations.
+
+All three platforms communicate with the same hosted Python/Flask server, ensuring that data, predictions, and model updates are instantly available across the entire ecosystem.
 
 ---
 
-## 🛠️ Tech Stack
+## Screenshots
 
-* **Frontend:** Swift, SwiftUI (macOS 13+ Ventura/Sonoma)
+| Dashboard | AI Chat Advisor |
+|:---:|:---:|
+| <img width="1440" height="900" alt="Dashboard View" src="https://github.com/user-attachments/assets/32a208b1-9342-45b8-9fea-136b3220005e" /> | <img width="1440" height="900" alt="Chat Interface" src="https://github.com/user-attachments/assets/3e3b9fff-0e76-4e8b-9530-1214aa19c18e" /> |
+
+---
+
+## Tech Stack
+
+* **Frontend (macOS):** Swift, SwiftUI (macOS 13+ Ventura/Sonoma)
+* **Frontend (Web/Mobile):** React / Native Frameworks
 * **Charts:** Swift Charts
 * **Audio:** AVFoundation (Native Text-to-Speech)
 * **Networking:** URLSession (Native)
 * **AI Model:** Google Gemini API (Generative Language)
-* **Backend (Prediction API):** Python, Flask, Google Cloud Run (for the ML model hosting)
+* **Backend (Prediction API):** Python, Flask, Google Cloud Run (Hosting the ML model for all platforms)
 
 ---
 
-## 🚀 Installation & Setup
+## Installation & Setup (macOS)
 
 ### Prerequisites
 * macOS 13.0 (Ventura) or later.
@@ -82,7 +106,7 @@ Built entirely with **SwiftUI** for macOS, it features a sleek, responsive dashb
 
 ---
 
-## 📖 Usage Guide
+## Usage Guide
 
 1.  **Explore AMCs:** On the home screen, browse or search for a specific Asset Management Company (e.g., "HDFC Mutual Fund").
 2.  **Analyze a Fund:** Click on an AMC to view available funds. Select a fund to view its historical NAV chart.
@@ -91,9 +115,10 @@ Built entirely with **SwiftUI** for macOS, it features a sleek, responsive dashb
 
 ---
 
-## 🧠 Backend API Reference
+## Backend API Reference
 
-Sampatti AI communicates with a hosted prediction service.
+Sampatti AI communicates with a hosted prediction service used by the Web, Mobile, and macOS clients.
+
 * **Endpoint:** `POST /predict`
 * **Payload Example:**
     ```json
@@ -110,13 +135,13 @@ Sampatti AI communicates with a hosted prediction service.
 
 ---
 
-## 🛡️ License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
